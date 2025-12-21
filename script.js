@@ -17,44 +17,61 @@ function openFeatures() {
 }
 openFeatures();
 
-let form = document.querySelector(".addTask  form");
-let taskInput = document.querySelector(".addTask form #task-input");
-let taskDetailsInput = document.querySelector(".addTask form textarea");
-let taskCheckbox = document.querySelector(".addTask form #check");
+function todoList() {
+  var currentTasks = [];
 
-let currentTasks = [
-  {
-    task: "Mandir Jao",
-    details: "Hanuman ji vaale",
-    imp: true,
-  },
-  {
-    task: "Study",
-    details: "SCS",
-    imp: true,
-  },
-  {
-    task: "Lunch at 2PM",
-    details: "Mom told",
-    imp: false,
-  },
-];
+  if (localStorage.getItem("currentTask")) {
+    currentTasks = JSON.parse(localStorage.getItem("currentTask"));
+  } else {
+    console.log("Task list is Empty");
+  }
 
-// form.addEventListener("submit", (e) => {
-//   e.preventDefault();
-//   // console.log(taskInput.value);
-//   // console.log(taskDetailsInput.value);
-//   // console.log(taskCheckbox.checked);
-// });
+  function renderTask() {
+    let allTask = document.querySelector(".allTask");
 
-let allTask = document.querySelector(".allTask");
-
-let sum = "";
-currentTasks.forEach((e) => {
-  sum += `<div class="task">
+    let sum = "";
+    currentTasks.forEach((e, idx) => {
+      sum += `<div class="task">
               <h5>${e.task}<span class="${e.imp}">imp</span></h5>
-              <button>Mark as complete</button>
+              ${e.details ? `
+                <details>
+                  <summary></i></summary>
+                  <p>${e.details}</p>
+                </details>
+              ` : ""}
+              <button id=${idx}>Mark as complete</button>
+              
             </div>`;
-});
+    });
 
-allTask.innerHTML = sum;
+    allTask.innerHTML = sum;
+    localStorage.setItem("currentTask", JSON.stringify(currentTasks));
+
+    document.querySelectorAll(".task button").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        currentTasks.splice(btn.id, 1);
+        renderTask();
+      });
+    });
+  }
+  renderTask();
+
+  let form = document.querySelector(".addTask  form");
+  let taskInput = document.querySelector(".addTask form #task-input");
+  let taskDetailsInput = document.querySelector(".addTask form textarea");
+  let taskCheckbox = document.querySelector(".addTask form #check");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    currentTasks.push({
+      task: taskInput.value,
+      details: taskDetailsInput.value,
+      imp: taskCheckbox.checked,
+    });
+    renderTask();
+    taskCheckbox.checked = false;
+    taskDetailsInput.value = "";
+    taskInput.value = "";
+  });
+}
+todoList();

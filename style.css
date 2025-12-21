@@ -116,10 +116,6 @@ section.allElems {
   scale: 0.97;
 }
 
-.todo-list-fullpage {
-  display: block;
-}
-
 .todo-list-fullpage h1 {
   font-size: 50px;
 }
@@ -221,6 +217,7 @@ section.allElems {
   color: var(--sec);
   font-size: 20px;
   display: flex;
+  align-items: flex-start;
   gap: 10px;
 }
 
@@ -234,7 +231,7 @@ section.allElems {
 .task h5 span{
   background-color: var(--red);
   color: var(--pri);
-  padding: 4px 6px;
+  padding: 4px 8px;
   border-radius: 50px;
   font-size: 11px;
 }
@@ -247,6 +244,10 @@ section.allElems {
   border-radius: 5px;
   border: none;
   font-weight: 600;
+}
+
+.task button:active{
+  scale: 0.96;
 }
 
 .mark-imp{
@@ -266,4 +267,71 @@ section.allElems {
 
 .mark-imp label{
   font-size: 18px;
+}
+
+details {
+  margin: 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 6px 10px;
+  background-color: #fafafa;
+  font-size: 0.9rem;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none; /* remove default arrow (Chrome) */
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Remove default marker (Firefox) */
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::before {
+  content: "▶";
+  font-size: 0.75rem;
+  transition: transform 0.2s ease;
+}
+
+/* Rotate arrow when open */
+details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+details p {
+  margin-top: 8px;
+  padding-left: 16px;
+  color: #444;
+  line-height: 1.4;
+}
+summary:hover {
+  color: #0077ff;
+}
+
+summary:focus {
+  outline: none;
+}
+
+summary:focus-visible {
+  outline: 2px solid #0077ff;
+  border-radius: 4px;
+}
+details[open] p {
+  animation: fadeSlide 0.2s ease-in;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

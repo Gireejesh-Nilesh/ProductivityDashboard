@@ -1,0 +1,3 @@
+// config.example.js
+
+window.WEATHER_API_KEY = "YOUR_API_KEY_HERE";

@@ -4,6 +4,9 @@
   --ter2: #456882;
   --ter1: #052c47;
   --red: crimson;
+  --green: rgb(9, 138, 89);
+  --blue: rgb(0, 191, 255);
+  --black: #000;
 }
 
 @font-face {
@@ -27,7 +30,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: aeonik;
-  color: var(--pri);
+  /* color: var(--pri); */
 }
 html,
 body {
@@ -39,29 +42,69 @@ body {
   width: 100%;
   height: 100%;
   background-color: var(--sec);
-}
-
-nav {
-  position: fixed;
-  width: 100%;
-  height: 60px;
-  background-color: var(--ter1);
+  color: var(--pri);
 }
 
 section.allElems {
   width: 100%;
   height: 100%;
   padding: 40px;
-  padding-top: 80px;
+  position: absolute;
+  overflow: auto;
+}
+
+section.allElems .allFeatures {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
   gap: 40px;
-  position: absolute;
+}
+
+.allElems header {
+  height: 231px;
+  width: 100%;
+  background-image: url("https://images.unsplash.com/photo-1419833173245-f59e1b93f9ee?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c2t5fGVufDB8MHwwfHx8MA%3D%3D");
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 50px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  color: #fff;
+}
+
+header .header1 h1 {
+  font-weight: 700;
+  font-size: 70px;
+  margin-bottom: 25px;
+}
+header .header1 h4 {
+  font-weight: 500;
+  font-size: 30px;
+}
+header .header1 h2 {
+  font-weight: 500;
+  font-size: 50px;
+}
+header .header2 h2 {
+  font-weight: 700;
+  font-size: 50px;
+}
+header .header2 h4 {
+  font-weight: 500;
+  font-size: 30px;
+  margin-bottom: 20px;
+  margin-top: -10px;
+}
+header .header2 h3 {
+  font-weight: 500;
+  font-size: 20px;
+  opacity: 0.8;
 }
 
 .elem {
-  background-color: #feba17;
   height: 300px;
   width: 195px;
   border-radius: 10px;
@@ -88,6 +131,7 @@ section.allElems {
   font-size: 18px;
   bottom: 4%;
   right: 5%;
+  color: #e0e0e0;
 }
 
 .fullElem {
@@ -95,7 +139,6 @@ section.allElems {
   width: 100%;
   background-color: var(--sec);
   padding: 40px;
-  /* font-size: 30px; */
   display: none;
   position: absolute;
 }
@@ -237,7 +280,7 @@ section.allElems {
 .task button {
   padding: 10px 20px;
   counter-reset: var(--pri);
-  background-color: green;
+  background-color: var(--green);
   font-size: 18px;
   border-radius: 5px;
   border: none;
@@ -306,7 +349,7 @@ details p {
   line-height: 1.4;
 }
 summary:hover {
-  color: #0077ff;
+  color: var(--blue);
 }
 
 summary:focus {
@@ -314,7 +357,7 @@ summary:focus {
 }
 
 summary:focus-visible {
-  outline: 2px solid #0077ff;
+  outline: 2px solid --blue;
   border-radius: 4px;
 }
 details[open] p {
@@ -375,13 +418,10 @@ details[open] p {
   font-size: 36px;
   padding-top: 34px;
   outline: none;
+  color: #fafafa;
 }
 
-.motivational-fullpage {
-  position: relative;
-}
-
-.motivation-fullPage-container{
+.motivation-fullPage-container {
   height: 100%;
   width: 100%;
   display: flex;
@@ -443,7 +483,6 @@ details[open] p {
   font-size: 45px;
   font-weight: 700;
   color: var(--pri);
-
 }
 
 .motivation3 {
@@ -464,10 +503,310 @@ details[open] p {
   text-align: right;
 }
 
-.motivational-fullpage .motivation-container .motivation-wrapper img{
+.motivational-fullpage .motivation-container .motivation-wrapper img {
   position: absolute;
   right: 5%;
   opacity: 0.4;
   top: 5%;
   height: 100px;
+}
+
+.pomodoro-fullpage h2 {
+  font-size: 40px;
+}
+
+.pomodoro-fullpage .pomo-timer {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.pomo-timer h1 {
+  font-size: 160px;
+}
+
+.pomo-timer button {
+  color: #fff;
+  background-color: var(--ter1);
+  padding: 10px 20px;
+  font-size: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  box-shadow: 1px 1px 0px var(--pri);
+  transition: all ease 0.1s;
+  font-weight: 700;
+}
+.pomo-timer button:active {
+  scale: 0.96;
+  box-shadow: none;
+}
+
+.pomodoro-fullpage .session {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: var(--green);
+  padding: 15px 30px;
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+.side-nav {
+  position: fixed;
+  top: 45%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+}
+
+.nav-toggle {
+  width: 45px;
+  height: 45px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid var(--ter2);
+  opacity: 0.5;
+  scale: 0.9;
+  transition: all ease-out 0.2s;
+  position: absolute;
+  z-index: 9999;
+}
+
+.nav-toggle:hover {
+  opacity: 1;
+  scale: 1;
+  background-color: var(--ter2);
+}
+
+.nav-toggle i {
+  font-size: 28px;
+}
+
+.nav-panel {
+  opacity: 0.9;
+  margin-top: 70px;
+  height: 90vh;
+  width: 0;
+  overflow: hidden;
+  background-color: var(--sec);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  transition: width 0.4s ease;
+  position: absolute;
+  left: 10px;
+}
+
+.side-nav.active .nav-panel {
+  width: 300px;
+}
+
+.nav-panel button {
+  height: 50px;
+  width: 200px;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background-color: transparent;
+  font-weight: 600;
+  font-size: 25px;
+  cursor: pointer;
+  color: var(--pri);
+  transition: all linear 0.5s;
+}
+
+.nav-panel button:hover {
+  background-color: var(--pri);
+  color: var(--blue);
+}
+
+.nav-panel button:active {
+  scale: 0.95;
+}
+
+.nav-panel .theme {
+  font-size: 20px;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 4%;
+  right: 10%;
+  background-color: #ffffff7c;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all linear 0.3s;
+}
+
+.nav-panel .theme i {
+  color: var(--black);
+}
+
+.nav-panel .theme:hover i {
+  color: var(--pri);
+}
+
+.nav-panel .theme:hover {
+  background-color: var(--black);
+}
+
+.goals-container {
+  height: 80%;
+  width: 100%;
+  margin-top: 40px;
+  display: flex;
+  gap: 30px;
+}
+
+.addGoal {
+  width: 30%;
+  background-color: var(--ter2);
+  border-radius: 20px;
+  padding: 30px;
+}
+
+.addGoal form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.addGoal input,
+.addGoal textarea {
+  padding: 15px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  color: var(--sec);
+}
+
+.addGoal textarea{
+  min-height: 250px;
+}
+
+.addGoal button {
+  padding: 15px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--ter1);
+  font-weight: 700;
+  cursor: pointer;
+  color: #e0e0e0;
+}
+
+.allGoals {
+  width: 68%;
+  height: 100%;
+  padding: 30px;
+  background-color: var(--ter1);
+  border-radius: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-content: flex-start;
+  overflow: auto;
+  position: relative;
+}
+
+.goal-card {
+  width: 220px;
+  min-height: 180px;
+  padding: 20px;
+  border-radius: 10px;
+  color: var(--black);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+  transform: rotate(-1deg);
+  position: relative;
+}
+
+.goal-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.goal-card p {
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.goal-card button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--green);
+  color: var(--pri);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.goal-card:nth-child(even) {
+  transform: rotate(1.5deg);
+}
+
+.goal-card {
+  cursor: grab;
+}
+
+.goal-card.dragging {
+  opacity: 0.6;
+  cursor: grabbing;
+  z-index: 1000;
+}
+.goal-card {
+  transform-origin: top center;
+}
+
+.goal-card::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  background-color: crimson;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+  opacity: 0;
+}
+
+.goal-card.pinned::before {
+  opacity: 1;
+}
+
+.goal-card.drop-animate {
+  animation: pinDrop 0.25s ease-out;
+}
+
+@keyframes pinDrop {
+  0% {
+    transform: scale(1.05) rotate(0deg);
+  }
+  60% {
+    transform: scale(0.98) rotate(-1deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
 }

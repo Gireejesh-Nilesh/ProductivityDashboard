@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Productivity Dashboard</title>
     <link
+      rel="shortcut icon"
+      href="./apple-touch-icon.png"
+      type="image/x-icon"
+    />
+    <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"
       rel="stylesheet"
     />
@@ -14,42 +19,75 @@
     <div id="main">
       <!-- <nav></nav> -->
       <section class="allElems">
-        <div class="todo elem" id="0">
-          <img
-            src="https://images.unsplash.com/photo-1601315488950-3b5047998b38?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8M0R8ZW58MHx8MHx8fDA%3D"
-            alt=""
-          />
-          <h2>To Do List</h2>
-        </div>
-        <div class="daily elem" id="1">
-          <img
-            src="https://images.unsplash.com/photo-1648457257285-cfbc3781cc54?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8M0R8ZW58MHx8MHx8fDA%3D"
-            alt=""
-          />
-          <h2>Daily Planner</h2>
-        </div>
-        <div class="moti elem" id="2">
-          <img
-            src="https://images.unsplash.com/photo-1718202248232-0cdbc15d29b2?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8M0R8ZW58MHx8MHx8fDA%3D"
-            alt=""
-          />
-          <h2>Motivation</h2>
-        </div>
-        <div class="pomo elem" id="3">
-          <img
-            src="https://images.unsplash.com/photo-1635241161466-541f065683ba?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8M0R8ZW58MHx8MHx8fDA%3D"
-            alt=""
-          />
-          <h2>Pomodoro Timer</h2>
-        </div>
-        <div class="goals elem" id="4">
-          <img
-            src="https://images.unsplash.com/photo-1682846133858-c0599bc99874?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fDNEfGVufDB8fDB8fHww"
-            alt=""
-          />
-          <h2>Daily Goals</h2>
+        <header>
+          <div class="header1">
+            <h2>20 April 2025</h2>
+            <h1>Saturday, 1:00pm</h1>
+            <h4>Bhopal (MP)</h4>
+          </div>
+          <div class="header2">
+            <h2>20°C</h2>
+            <h4>Light rain</h4>
+            <h3 class="precipitation">Precipitation: 35%</h3>
+            <h3 class="humidity">Humidity: 49%</h3>
+            <h3 class="wind">Wind: 10km/h</h3>
+          </div>
+        </header>
+        <div class="allFeatures">
+          <div class="todo elem" id="0">
+            <img
+              src="https://images.unsplash.com/photo-1601315488950-3b5047998b38?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8M0R8ZW58MHx8MHx8fDA%3D"
+              alt=""
+            />
+            <h2>To Do List</h2>
+          </div>
+          <div class="daily elem" id="1">
+            <img
+              src="https://images.unsplash.com/photo-1648457257285-cfbc3781cc54?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8M0R8ZW58MHx8MHx8fDA%3D"
+              alt=""
+            />
+            <h2>Daily Planner</h2>
+          </div>
+          <div class="moti elem" id="2">
+            <img
+              src="https://images.unsplash.com/photo-1718202248232-0cdbc15d29b2?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8M0R8ZW58MHx8MHx8fDA%3D"
+              alt=""
+            />
+            <h2>Motivation</h2>
+          </div>
+          <div class="pomo elem" id="3">
+            <img
+              src="https://images.unsplash.com/photo-1635241161466-541f065683ba?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8M0R8ZW58MHx8MHx8fDA%3D"
+              alt=""
+            />
+            <h2>Pomodoro Timer</h2>
+          </div>
+          <div class="goals elem" id="4">
+            <img
+              src="https://images.unsplash.com/photo-1682846133858-c0599bc99874?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fDNEfGVufDB8fDB8fHww"
+              alt=""
+            />
+            <h2>Daily Goals</h2>
+          </div>
         </div>
       </section>
+      <div class="side-nav">
+        <div class="nav-toggle">
+          <i class="ri-arrow-right-s-line"></i>
+        </div>
+
+        <div class="nav-panel">
+          <div class="theme">
+            <i class="ri-sun-line"></i>
+          </div>
+          <button data-target="0">To-Do</button>
+          <button data-target="1">Planner</button>
+          <button data-target="2">Motivation</button>
+          <button data-target="3">Pomodoro</button>
+          <button data-target="4">Goals</button>
+        </div>
+      </div>
+
       <section class="fullElem todo-list-fullpage">
         <button class="close-btn" id="0">Close</button>
         <h1>Your Personalised Task List</h1>
@@ -99,11 +137,39 @@
       </section>
       <section class="fullElem pomodoro-fullpage">
         <button class="close-btn" id="3">Close</button>
-        <h1>Pomodoro Timer</h1>
+        <h2>Stay Focused with me!</h2>
+
+        <h4 class="session">Work Session</h4>
+        <div class="pomo-timer">
+          <h1>25:00</h1>
+          <button class="start-timer">Start</button>
+          <button class="pause-timer">Pause</button>
+          <button class="reset-timer">Reset</button>
+        </div>
       </section>
       <section class="fullElem daily-goals-fullpage">
         <button class="close-btn" id="4">Close</button>
         <h1>Daily Goals</h1>
+
+        <div class="goals-container">
+          <div class="addGoal">
+            <form>
+              <input
+                type="text"
+                placeholder="Goal Title"
+                id="goal-title"
+                required
+              />
+              <textarea
+                placeholder="Goal Description"
+                id="goal-desc"
+              ></textarea>
+              <button>Add Goal</button>
+            </form>
+          </div>
+
+          <div class="allGoals"></div>
+        </div>
       </section>
     </div>
 
